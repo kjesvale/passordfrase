@@ -15,23 +15,37 @@ p {
     margin-top: 0;
 }
 
-main, footer {
+header {
+    margin-bottom: 2rem;
+}
+
+main {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    margin: 0 1rem;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+footer {
+    color: gray;
+}
+
+footer p {
+    margin-top: 0;
 }
 
 #resultat {
     margin: 3rem 0 5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-#handlinger {
-    margin-top: 2rem;
-    display: flex;
     align-items: center;
 }
 
@@ -44,6 +58,17 @@ main, footer {
     font-size: 1.625rem;
     padding: 0.5rem 1.75rem;
     background-color: darkseagreen;
+    margin-bottom: 2rem;
+}
+
+#handlinger {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+#innstillinger {
+    margin-bottom: 4rem;
 }
 
 .knapp {
@@ -81,6 +106,7 @@ main, footer {
 
 .knapp:focus {
     outline: none;
+    box-shadow: 0 0 0 0.25rem white;
 }
 
 .knapp:active {
@@ -88,20 +114,33 @@ main, footer {
     transform: translate3d(0.125rem, 0.125rem, 0);
 }
 
-a {
-    color: white;
+#innstillinger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-a:hover {
-    text-decoration: none;
+#innstillinger label {
+    margin-bottom: 1rem;
 }
 
-footer {
-    color: gray;
+#velg-variant {
+    height: 3rem;
+    border: none;
+    background: skyblue;
+    box-shadow: 0.5rem 0.5rem 0 black;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    font-size: 1rem;
 }
 
-footer p {
-    margin-top: 0;
+#velg-variant:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.25rem white;
+}
+
+.radio-button label {
+    margin-left: 1rem;
 }
 
 @media (min-width: 50rem) {
