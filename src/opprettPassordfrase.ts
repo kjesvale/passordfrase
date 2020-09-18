@@ -15,7 +15,7 @@ enum Separator {
 }
 
 const velgTilfeldigOrd = (ordklasse: string[]) =>
-    ordklasse[Math.round(Math.random() * (ordklasse.length - 1))];
+    ordklasse[Math.floor(Math.random() * (ordklasse.length - 1))];
 
 const hentMuligeKombinasjoner = (setningstype: Setning) =>
     setningstype.reduce((numberOfCombinations, words) => numberOfCombinations * words.length, 1);

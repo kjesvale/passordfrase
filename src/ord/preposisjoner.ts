@@ -6,7 +6,6 @@ const preposisjoner = [
     'foran',
     'forbi',
     'gjennom',
-    'hos',
     'innen',
     'inni',
     'like ved',
@@ -24,7 +23,7 @@ const preposisjoner = [
     'utover',
     'ved',
     'via',
-    // i, på, for
+    // i, på, for, hos
 ];
 
 export default preposisjoner;
