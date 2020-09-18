@@ -42,7 +42,7 @@ const dyr = [
     ['torsk', 'torsken'],
     ['ulv', 'ulven'],
     ['ål', 'ålen'],
-]
+];
 
 const fabeldyr = [
     ['alv', 'alven'],
@@ -64,11 +64,11 @@ const fabeldyr = [
     ['trollmann', 'trollmannen'],
     ['vampyr', 'vampyren'],
     ['varulv', 'varulven'],
-]
+];
 
 const mennesker = [
     ['dame', 'dama'],
-    ['danske' 'dansken'],
+    ['danske', 'dansken'],
     ['dronning', 'dronningen'],
     ['finne', 'finnen'],
     ['fyr', 'fyren'],
@@ -85,22 +85,17 @@ const mennesker = [
     ['rådgiver', 'rådgiveren'],
     ['sjørøver', 'sjørøveren'],
     ['svenske', 'svensken'],
-]
+];
 
 const ting = [
     ['drone', 'dronen'],
     ['robot', 'roboten'],
     ['androide', 'androiden'],
-]
-
-const subjekter = [
-    ...dyr,
-    ...mennesker,
-    ...fabeldyr,
-    ...ting,
 ];
 
-export const ubestemteSubjekter: string[] = subjekter.map(([ubestemt]) => ubestemt);
-export const bestemteSubjekter: string[] = subjekter.map(([ubestemt, bestemt]) => bestemt);
+const subjekter = [...dyr, ...mennesker, ...fabeldyr, ...ting];
+
+export const subjekterUbestemt: string[] = subjekter.map(([ubestemt]) => ubestemt);
+export const subjekterBestemt: string[] = subjekter.map(([_, bestemt]) => bestemt);
 
 export default subjekter;

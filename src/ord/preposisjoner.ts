@@ -1,15 +1,13 @@
-const preposisjoner = [
+export const preposisjonerEntall = [
     'bak',
-    'blant',
     'etter',
     'før',
     'foran',
     'forbi',
     'gjennom',
-    'innen',
+    'innenfor',
     'inni',
     'like ved',
-    'mellom',
     'mot',
     'omkring',
     'oppå',
@@ -23,7 +21,9 @@ const preposisjoner = [
     'utover',
     'ved',
     'via',
-    // i, på, for, hos
 ];
 
-export default preposisjoner;
+export const preposisjonerFlertall = ['mellom', 'blant', 'hos'];
+export const preposisjonerFørStedsnavn = ['i', 'på', 'for'];
+
+export default [...preposisjonerEntall, ...preposisjonerFlertall];

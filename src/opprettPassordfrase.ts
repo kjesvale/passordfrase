@@ -1,8 +1,8 @@
-import { ubestemteSubjekter, bestemteSubjekter } from './ord/subjekter';
+import { subjekterUbestemt, subjekterBestemt } from './ord/subjekter';
+import { stederBestemt, stederUbestemt, stederBestemtFlertall } from './ord/steder';
 import adjektiv from './ord/adjektiv';
 import adverb from './ord/adverb';
 import preposisjoner from './ord/preposisjoner';
-import steder from './ord/steder';
 import verb from './ord/verb';
 
 type Setning = string[][];
@@ -36,16 +36,31 @@ const opprettPassordfrase = (
         ''
     );
 
-const standardSetning: Setning = [bestemteSubjekter, verb, adverb, preposisjoner, steder];
-const alternativSetning: Setning = [adjektiv, ubestemteSubjekter, verb, preposisjoner, steder];
-const langSetning: Setning = [adjektiv, ubestemteSubjekter, verb, adverb, preposisjoner, steder];
+const standardSetning: Setning = [subjekterBestemt, verb, adverb, preposisjoner, stederBestemt];
+
+const alternativSetning: Setning = [
+    adjektiv,
+    subjekterUbestemt,
+    verb,
+    preposisjoner,
+    stederBestemt,
+];
+
+const langSetning: Setning = [
+    adjektiv,
+    subjekterUbestemt,
+    verb,
+    adverb,
+    preposisjoner,
+    stederUbestemt,
+];
 
 const alleOrd = [
-    ...ubestemteSubjekter,
+    ...subjekterUbestemt,
     ...verb,
     ...adverb,
     ...preposisjoner,
-    ...steder,
+    ...stederUbestemt,
     ...adjektiv,
 ];
 

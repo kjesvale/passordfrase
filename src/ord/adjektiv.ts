@@ -49,7 +49,7 @@ const adjektiv = [
     'lignende',
     'liten',
     'løs',
-    'lovlig'
+    'lovlig',
     'lykkelig',
     'merkelig',
     'modig',
