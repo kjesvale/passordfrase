@@ -61,7 +61,7 @@ const standardSetning: Ordklasse[] = [
     Ordklasse.Verb,
     Ordklasse.Adverb,
     Ordklasse.PreposisjonEntall,
-    Ordklasse.SubjektBestemt,
+    Ordklasse.StederBestemt,
 ];
 
 const alternativSetning: Ordklasse[] = [

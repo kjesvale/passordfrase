@@ -21,6 +21,7 @@ const adjektiv = [
     'fersk',
     'fjern',
     'flau',
+    'full',
     'følsom',
     'forsiktig',
     'fremmed',
@@ -87,6 +88,7 @@ const adjektiv = [
     'vennlig',
     'vill',
     'villig',
+    'væpnet',
 ];
 
 export default adjektiv;

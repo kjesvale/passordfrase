@@ -51,35 +51,37 @@ const naturen: BøybartSted[] = [
 ];
 
 const menneskeskapteSteder: BøybartSted[] = [
-    ['benk', 'benken', 'benkene'],
-    ['bilde', 'bildet', 'bildene'],
-    ['bord', 'bordet', 'bordene'],
     ['by', 'byen', 'byene'],
     ['fest', 'festen', 'festene'],
     ['gård', 'gården', 'gårdene'],
-    ['gryte', 'gryta', 'grytene'],
     ['gulv', 'gulvet', 'gulvene'],
     ['kino', 'kinoen'],
     ['kjeller', 'kjelleren'],
-    ['lampe', 'lampen', 'lampene'],
     ['loft', 'loftet'],
     ['luft', 'lufta', 'luft'],
-    ['plakat', 'plakaten'],
     ['romskip', 'romskipet', 'romskipene'],
     ['romstasjon', 'romstasjonen'],
-    ['stol', 'stolen', 'stolene'],
-    ['suppe', 'suppa', 'suppene'],
     ['tak', 'taket', 'takene'],
-    ['teppe', 'teppet', 'teppene'],
     ['tun', 'tunet', 'tunene'],
     ['vei', 'veien', 'veiene'],
 ];
 
 const objekter: BøybartSted[] = [
+    ['benk', 'benken', 'benkene'],
     ['bil', 'bilen', 'bilene'],
+    ['bilde', 'bildet', 'bildene'],
+    ['bord', 'bordet', 'bordene'],
     ['cyberspace', 'cyberspace'],
+    ['gryte', 'gryta', 'grytene'],
     ['hus', 'huset', 'husene'],
     ['internett', 'internett'],
+    ['lampe', 'lampen', 'lampene'],
+    ['plakat', 'plakaten'],
+    ['sofa', 'sofaen', 'sofaene'],
+    ['stol', 'stolen', 'stolene'],
+    ['suppe', 'suppa', 'suppene'],
+    ['teppe', 'teppet', 'teppene'],
+    ['tønne', 'tønna', 'tønnene'],
 ];
 
 const fjernUndefined = (item?: string) => item !== undefined;
