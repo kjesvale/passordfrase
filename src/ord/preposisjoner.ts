@@ -21,10 +21,9 @@ const preposisjoner = [
     'til',
     'under',
     'utenfor',
+    'utover',
     'ved',
     'via',
-    'utover',
-
     // i, på, for
 ];
 

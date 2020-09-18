@@ -20,10 +20,19 @@ const velgTilfeldigOrd = (ordklasse: string[]) =>
 const hentMuligeKombinasjoner = (setningstype: Setning) =>
     setningstype.reduce((numberOfCombinations, words) => numberOfCombinations * words.length, 1);
 
-const opprettPassordfrase: string = (setningstype: Setning, separator: Separator = ' ') =>
+const erstattMellomromMedSeparator = (ord: string, separator: Separator) =>
+    ord.replace(/ /g, separator);
+
+const opprettPassordfrase = (
+    setningstype: Setning,
+    separator: Separator = Separator.Space
+): string =>
     setningstype.reduce(
         (frase: string, ordklasse, index) =>
-            frase + (index > 0 ? separator : '') + velgTilfeldigOrd(ordklasse),
+            `${frase}${index > 0 ? separator : ''}${erstattMellomromMedSeparator(
+                velgTilfeldigOrd(ordklasse),
+                separator
+            )}`,
         ''
     );
 
