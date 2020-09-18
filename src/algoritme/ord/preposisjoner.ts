@@ -26,4 +26,4 @@ export const preposisjonerEntall = [
 export const preposisjonerFlertall = ['mellom', 'blant', 'hos'];
 export const preposisjonerFørStedsnavn = ['i', 'på', 'for'];
 
-export default [...preposisjonerEntall, ...preposisjonerFlertall];
+export default [...preposisjonerEntall];
