@@ -29,14 +29,14 @@ const velgTilfeldigOrd = (ordsett: Ordsett) => {
     return ordsett[index];
 };
 
-const antallMuligeKombinasjoner = (setning: Ordklasse[]) =>
+const erstattMellomromMedSeparator = (ord: string, separator: Separator) =>
+    ord.replace(/ /g, separator);
+
+export const antallMuligeKombinasjoner = (setning: Ordklasse[]) =>
     setning.reduce(
         (numberOfCombinations, ordklasse) => numberOfCombinations * alleOrdsett[ordklasse].length,
         1
     );
-
-const erstattMellomromMedSeparator = (ord: string, separator: Separator) =>
-    ord.replace(/ /g, separator);
 
 const opprettPassord = (setning: Ordklasse[], separator: Separator = Separator.Space): string => {
     let passordfrase = '';
@@ -55,37 +55,5 @@ const opprettPassord = (setning: Ordklasse[], separator: Separator = Separator.S
 
     return passordfrase;
 };
-
-const standardSetning: Ordklasse[] = [
-    Ordklasse.SubjektBestemt,
-    Ordklasse.Verb,
-    Ordklasse.Adverb,
-    Ordklasse.PreposisjonEntall,
-    Ordklasse.StederBestemt,
-];
-
-const alternativSetning: Ordklasse[] = [
-    Ordklasse.Adjektiv,
-    Ordklasse.SubjektUbestemt,
-    Ordklasse.Verb,
-    Ordklasse.PreposisjonEntall,
-    Ordklasse.StederBestemt,
-];
-
-const kombinertSetning: Ordklasse[] = [
-    Ordklasse.Adjektiv,
-    Ordklasse.SubjektUbestemt,
-    Ordklasse.Verb,
-    Ordklasse.Adverb,
-    Ordklasse.PreposisjonEntall,
-    Ordklasse.StederBestemt,
-];
-
-const femTilfeldigeOrd: Ordklasse[] = Array(5).fill(Ordklasse.AlleOrd);
-
-console.log(opprettPassord(standardSetning), antallMuligeKombinasjoner(standardSetning));
-console.log(opprettPassord(alternativSetning), antallMuligeKombinasjoner(alternativSetning));
-console.log(opprettPassord(kombinertSetning), antallMuligeKombinasjoner(kombinertSetning));
-console.log(opprettPassord(femTilfeldigeOrd), antallMuligeKombinasjoner(femTilfeldigeOrd));
 
 export default opprettPassord;
