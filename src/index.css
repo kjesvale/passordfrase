@@ -5,10 +5,10 @@ body {
     justify-content: center;
     min-height: 100vh;
     text-align: center;
-
     color: white;
     font-family: 'Helvetica', 'sans-serif';
     background-color: #222;
+    -webkit-tap-highlight-color: transparent;
 }
 
 p {
@@ -22,15 +22,69 @@ main, footer {
     margin: 0 1rem;
 }
 
-output {
+#resultat {
+    margin: 3rem 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#handlinger {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+#passord {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     color: black;
-    background-color: darkseagreen;
     font-family: monospace;
     font-size: 1.625rem;
-    padding: 1rem 1.75rem;
-    margin: 3rem 0 5rem;
-    border-radius: 0.5rem;
+    padding: 0 1.75rem;
+    background-color: darkseagreen;
+}
+
+.knapp {
+    border: none;
+    background: none;
+    padding: 0 1rem;
+    background-color: wheat;
+    display: flex;
+    align-items: center;
+}
+
+.knapp span {
+    font-size: 1rem;
+}
+
+.knapp > *:not(:first-child) {
+    margin-left: 0.5rem;
+}
+
+#passord, .knapp {
     box-shadow: 0.5rem 0.5rem 0 black;
+    border-radius: 0.5rem;
+    height: 3rem;
+}
+
+.knapp:hover {
+    cursor: pointer;
+    background-color: beige;
+}
+
+.knapp:focus {
+    outline: none;
+}
+
+.knapp:active {
+    box-shadow: 0.375rem 0.375rem 0 black;
+    transform: translate3d(0.125rem, 0.125rem, 0);
+}
+
+.knapp:not(:first-child) {
+    margin-left: 0.5rem;
 }
 
 a {
@@ -58,7 +112,7 @@ footer p {
         font-size: 1.25rem;
     }
 
-    output {
+    #passord {
         font-size: 2rem;
     }
 }
