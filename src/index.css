@@ -30,7 +30,7 @@ main, footer {
 }
 
 #handlinger {
-    margin-top: 1rem;
+    margin-top: 2rem;
     display: flex;
     align-items: center;
 }
@@ -42,17 +42,24 @@ main, footer {
     color: black;
     font-family: monospace;
     font-size: 1.625rem;
-    padding: 0 1.75rem;
+    padding: 0.5rem 1.75rem;
     background-color: darkseagreen;
 }
 
 .knapp {
     border: none;
     background: none;
-    padding: 0 1rem;
+    padding: 1rem;
     background-color: wheat;
     display: flex;
     align-items: center;
+    height: 3rem;
+    text-align: left;
+}
+
+#passord, .knapp {
+    box-shadow: 0.5rem 0.5rem 0 black;
+    border-radius: 0.5rem;
 }
 
 .knapp span {
@@ -60,13 +67,11 @@ main, footer {
 }
 
 .knapp > *:not(:first-child) {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
 }
 
-#passord, .knapp {
-    box-shadow: 0.5rem 0.5rem 0 black;
-    border-radius: 0.5rem;
-    height: 3rem;
+.knapp:not(:first-child) {
+    margin-left: 1rem;
 }
 
 .knapp:hover {
@@ -81,10 +86,6 @@ main, footer {
 .knapp:active {
     box-shadow: 0.375rem 0.375rem 0 black;
     transform: translate3d(0.125rem, 0.125rem, 0);
-}
-
-.knapp:not(:first-child) {
-    margin-left: 0.5rem;
 }
 
 a {
