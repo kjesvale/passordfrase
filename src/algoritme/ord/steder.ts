@@ -1,28 +1,24 @@
 type Sted = string;
 type BøybartSted = [string, string] | [string, string, string];
 
-const byer: Sted[] = [
+const stederINorge: Sted[] = [
     'ål',
     'bergen',
     'berlin',
-    'galtvort',
     'kristiansund',
-    'kyoto',
     'lofoten',
     'london',
-    'madrid',
     'oslo',
-    'paris',
     'råde',
     'rjukan',
     'stavanger',
-    'tokyo',
     'tromsø',
     'trondheim',
 ];
 
+const stederIUtlandet: Sted[] = ['tokyo', 'paris', 'kyoto', 'madrid'];
+const fiktiveSteder: Sted[] = ['galtvort'];
 const stederIOslo: Sted[] = ['storo', 'grefsen', 'majorstuen'];
-
 const stederIVerdensrommet: Sted[] = ['jupiter', 'månen', 'mars', 'pluto', 'saturn', 'sola'];
 
 const naturen: BøybartSted[] = [
@@ -86,7 +82,14 @@ const objekter: BøybartSted[] = [
 
 const fjernUndefined = (item?: string) => item !== undefined;
 
-export const stederIkkeBøybare = [...byer, ...stederIOslo, ...stederIVerdensrommet];
+export const stederIkkeBøybare = [
+    ...stederINorge,
+    ...stederIUtlandet,
+    ...fiktiveSteder,
+    ...stederIOslo,
+    ...stederIVerdensrommet,
+];
+
 export const stederBøybare = [...menneskeskapteSteder, ...naturen, ...objekter];
 
 export const stederUbestemt: string[] = [
