@@ -1,5 +1,5 @@
 type Sted = string;
-type BøybartSted = [string, string, string];
+type BøybartSted = [string, string] | [string, string, string];
 
 const byer: Sted[] = [
     'ål',
@@ -37,7 +37,7 @@ const naturen: BøybartSted[] = [
     ['hav', 'havet', 'havene'],
     ['hule', 'hulen', 'hulene'],
     ['land', 'landet', 'landene'],
-    ['landskap', 'landskapet', 'landskapene'],
+    ['landskap', 'landskapet'],
     ['meteor', 'meteoren', 'meteorene'],
     ['ørken', 'ørkenen', 'ørkenene'],
     ['pytt', 'pytten', 'pyttene'],
@@ -59,14 +59,14 @@ const menneskeskapteSteder: BøybartSted[] = [
     ['gård', 'gården', 'gårdene'],
     ['gryte', 'gryta', 'grytene'],
     ['gulv', 'gulvet', 'gulvene'],
-    ['kino', 'kinoen', 'kinoene'],
-    ['kjeller', 'kjelleren', 'kjellerne'],
+    ['kino', 'kinoen'],
+    ['kjeller', 'kjelleren'],
     ['lampe', 'lampen', 'lampene'],
-    ['loft', 'loftet', 'loftene'],
-    ['luft', 'lufta', 'luftene'],
-    ['plakat', 'plakaten', 'plakatene'],
+    ['loft', 'loftet'],
+    ['luft', 'lufta', 'luft'],
+    ['plakat', 'plakaten'],
     ['romskip', 'romskipet', 'romskipene'],
-    ['romstasjon', 'romstasjonen', 'romstasjonene'],
+    ['romstasjon', 'romstasjonen'],
     ['stol', 'stolen', 'stolene'],
     ['suppe', 'suppa', 'suppene'],
     ['tak', 'taket', 'takene'],
@@ -77,10 +77,12 @@ const menneskeskapteSteder: BøybartSted[] = [
 
 const objekter: BøybartSted[] = [
     ['bil', 'bilen', 'bilene'],
-    ['cyberspace', 'cyberspace', 'cyberspace'],
+    ['cyberspace', 'cyberspace'],
     ['hus', 'huset', 'husene'],
-    ['internett', 'internett', 'internett'],
+    ['internett', 'internett'],
 ];
+
+const fjernUndefined = (item?: string) => item !== undefined;
 
 export const stederIkkeBøybare = [...byer, ...stederIOslo, ...stederIVerdensrommet];
 export const stederBøybare = [...menneskeskapteSteder, ...naturen, ...objekter];
@@ -91,9 +93,8 @@ export const stederUbestemt: string[] = [
 ];
 
 export const stederBestemt: string[] = stederBøybare.map(([ubestemt, bestemt]) => bestemt);
-
-export const stederBestemtFlertall: string[] = stederBøybare.map(
-    ([ubestemt, bestemt, bestemtFlertall]) => bestemtFlertall
-);
+export const stederBestemtFlertall: string[] = stederBøybare
+    .map(([ubestemt, bestemt, bestemtFlertall]) => bestemtFlertall)
+    .filter(fjernUndefined);
 
 export default [...stederIkkeBøybare, ...stederBøybare];

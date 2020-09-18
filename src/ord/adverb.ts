@@ -15,7 +15,7 @@ const adverb = [
     'høyt',
     'ikke',
     'kanskje',
-    'klart',
+    'klar',
     'kort',
     'langt',
     'lavt',
