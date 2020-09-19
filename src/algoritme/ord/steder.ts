@@ -23,7 +23,7 @@ const stederIVerdensrommet: Sted[] = ['jupiter', 'månen', 'mars', 'pluto', 'sat
 
 const naturen: BøybartSted[] = [
     ['åker', 'åkeren', 'åkerne'],
-    ['ås', 'åser', 'åsene'],
+    ['ås', 'åsen', 'åsene'],
     ['bakke', 'bakken', 'bakkene'],
     ['dal', 'dalen', 'dalene'],
     ['elv', 'elven', 'elvene'],
