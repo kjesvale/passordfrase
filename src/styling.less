@@ -1,8 +1,9 @@
 @fokusramme: inset 0 0 0 0.25rem white;
-@primaryColor: mix(darkseagreen, white, 70%);
+@primaryColor: mix(white, darkseagreen, 30%);
 @secondaryColor: wheat;
-@secondaryColorLight: mix(@secondaryColor, white, 60%);
+@secondaryColorLight: mix(white, @secondaryColor, 60%);
 @tertiaryColor: lightblue;
+@tertiaryColorLight: mix(white, @tertiaryColor, 60%);
 
 #introduksjon {
     max-width: 25rem;
@@ -71,6 +72,11 @@
     border: none;
     padding: 0 1rem;
     appearance: none;
+
+    &:hover {
+        cursor: pointer;
+        background: @tertiaryColorLight;
+    }
 }
 
 .knapp {
