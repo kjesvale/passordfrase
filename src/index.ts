@@ -1,38 +1,6 @@
-import opprettPassord, { antallMuligeKombinasjoner } from './algoritme/opprett-passord';
-import { Ordklasse, Separator } from './algoritme/typer';
-
-enum Variant {
-    Standard = 'standard',
-    Kortere = 'kortere',
-    Lengre = 'lengre',
-    Tilfeldig = 'tilfeldig',
-}
-
-const varianter: Record<Variant, Ordklasse[]> = {
-    [Variant.Standard]: [
-        Ordklasse.Adjektiv,
-        Ordklasse.SubjektUbestemt,
-        Ordklasse.Verb,
-        Ordklasse.PreposisjonEntall,
-        Ordklasse.StederBestemt,
-    ],
-    [Variant.Kortere]: [
-        Ordklasse.SubjektBestemt,
-        Ordklasse.Verb,
-        Ordklasse.Adverb,
-        Ordklasse.PreposisjonEntall,
-        Ordklasse.StederBestemt,
-    ],
-    [Variant.Lengre]: [
-        Ordklasse.Adjektiv,
-        Ordklasse.SubjektUbestemt,
-        Ordklasse.Verb,
-        Ordklasse.Adverb,
-        Ordklasse.PreposisjonEntall,
-        Ordklasse.StederBestemt,
-    ],
-    [Variant.Tilfeldig]: Array(5).fill(Ordklasse.AlleOrd),
-};
+import opprettPassord from './algoritme/opprett-passord';
+import { Separator } from './algoritme/typer';
+import varianter, { Variant } from './algoritme/varianter';
 
 const passordOutput = document.querySelector('#passord');
 const nyttPassordKnapp = document.querySelector('#nytt-passord');
@@ -48,11 +16,11 @@ const opprettNyPassordfrase = () => {
 };
 
 const initialiser = () => {
-    nyttPassordKnapp.addEventListener('click', (e) => {
+    nyttPassordKnapp.addEventListener('click', () => {
         opprettNyPassordfrase();
     });
 
-    kopierPassordKnapp.addEventListener('click', (e) => {
+    kopierPassordKnapp.addEventListener('click', () => {
         try {
             navigator.clipboard.writeText(passordOutput.textContent);
         } catch (e) {
