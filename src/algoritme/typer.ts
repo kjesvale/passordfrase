@@ -1,10 +1,10 @@
 export type Ordsett = string[];
 
 export enum Separator {
-    Space = ' ',
-    Dot = '.',
-    Dash = '-',
-    Underscore = '_',
+    Mellomrom = ' ',
+    Punktum = '.',
+    Bindestrek = '-',
+    Understrek = '_',
 }
 
 export enum Ordklasse {

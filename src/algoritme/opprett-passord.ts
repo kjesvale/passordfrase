@@ -38,7 +38,10 @@ export const antallMuligeKombinasjoner = (setning: Ordklasse[]) =>
         1
     );
 
-const opprettPassord = (setning: Ordklasse[], separator: Separator = Separator.Space): string => {
+const opprettPassord = (
+    setning: Ordklasse[],
+    separator: Separator = Separator.Mellomrom
+): string => {
     let passordfrase = '';
 
     setning.forEach((ordklasse, index) => {

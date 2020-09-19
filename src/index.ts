@@ -1,5 +1,5 @@
 import opprettPassord, { antallMuligeKombinasjoner } from './algoritme/opprett-passord';
-import { Ordklasse } from './algoritme/typer';
+import { Ordklasse, Separator } from './algoritme/typer';
 
 enum Variant {
     Standard = 'standard',
@@ -38,35 +38,52 @@ const passordOutput = document.querySelector('#passord');
 const nyttPassordKnapp = document.querySelector('#nytt-passord');
 const kopierPassordKnapp = document.querySelector('#kopier-passord');
 const velgVariantSelect = document.querySelector('#velg-variant');
-
-const brukVariant = (variant: Variant) => {
-    passordOutput.textContent = opprettPassord(varianter[variant]);
-};
+const velgSeparatorSelect = document.querySelector('#velg-separator');
 
 let valgtVariant = Variant.Standard;
+let valgtSeparator = Separator.Mellomrom;
 
-brukVariant(valgtVariant);
+const opprettNyPassordfrase = () => {
+    passordOutput.textContent = opprettPassord(varianter[valgtVariant], valgtSeparator);
+};
 
-nyttPassordKnapp.addEventListener('click', (e) => {
-    brukVariant(valgtVariant);
-});
+const initialiser = () => {
+    nyttPassordKnapp.addEventListener('click', (e) => {
+        opprettNyPassordfrase();
+    });
 
-kopierPassordKnapp.addEventListener('click', (e) => {
-    try {
-        navigator.clipboard.writeText(passordOutput.textContent);
-    } catch (e) {
-        console.error('Kunne ikke kopiere passord til clipboard:', e);
-    }
-});
+    kopierPassordKnapp.addEventListener('click', (e) => {
+        try {
+            navigator.clipboard.writeText(passordOutput.textContent);
+        } catch (e) {
+            console.error('Kunne ikke kopiere passord til clipboard:', e);
+        }
+    });
 
-velgVariantSelect.addEventListener('change', (event) => {
-    const alleVarianter = Object.values(Variant);
-    const nyVariant = event.target.value;
+    velgVariantSelect.addEventListener('change', (event) => {
+        const alleVarianter = Object.values(Variant);
+        const nyVariant = event.target.value;
 
-    if (alleVarianter.includes(nyVariant)) {
-        valgtVariant = nyVariant;
-        brukVariant(valgtVariant);
-    } else {
-        console.error(`Kunne ikke velge variant "${nyVariant}"`);
-    }
-});
+        if (alleVarianter.includes(nyVariant)) {
+            valgtVariant = nyVariant;
+            opprettNyPassordfrase();
+        } else {
+            console.error(`Kunne ikke velge variant "${nyVariant}"`);
+        }
+    });
+
+    velgSeparatorSelect.addEventListener('change', (event) => {
+        const alleSeparatorer = Object.values(Separator);
+        const nySeparator = event.target.value;
+
+        if (alleSeparatorer.includes(nySeparator)) {
+            valgtSeparator = nySeparator;
+            opprettNyPassordfrase();
+        } else {
+            console.error(`Kunne ikke velge separator "${nySeparator}"`);
+        }
+    });
+};
+
+initialiser();
+opprettNyPassordfrase();
