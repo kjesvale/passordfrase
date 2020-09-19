@@ -31,11 +31,6 @@
         outline: none;
         box-shadow: @fokusramme;
     }
-
-    &:active {
-        box-shadow: 0.375rem 0.375rem 0 black;
-        transform: translate3d(0.125rem, 0.125rem, 0);
-    }
 }
 
 #handlinger {
@@ -84,6 +79,11 @@
     &:hover {
         cursor: pointer;
         background-color: @secondaryColorLight;
+    }
+
+    &:active {
+        box-shadow: 0.375rem 0.375rem 0 black;
+        transform: translate3d(0.125rem, 0.125rem, 0);
     }
 
     span {
