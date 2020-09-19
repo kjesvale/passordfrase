@@ -24,3 +24,7 @@ Tilfeldig:  Fem tilfeldige ord fra orddatabasen
 ```
 
 Du kan også velge tegnet mellom hvert ord.
+
+### Orddatabase
+
+Algoritmen baserer seg på en mengde ord fra ulike ordklasser, se `src/algoritme/ord`.
