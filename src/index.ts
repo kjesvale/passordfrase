@@ -5,9 +5,10 @@ enum Variant {
     Standard = 'standard',
     Kortere = 'kortere',
     Lengre = 'lengre',
+    Tilfeldig = 'tilfeldig',
 }
 
-const varianter = {
+const varianter: Record<Variant, Ordklasse[]> = {
     [Variant.Standard]: [
         Ordklasse.Adjektiv,
         Ordklasse.SubjektUbestemt,
@@ -30,9 +31,8 @@ const varianter = {
         Ordklasse.PreposisjonEntall,
         Ordklasse.StederBestemt,
     ],
+    [Variant.Tilfeldig]: Array(5).fill(Ordklasse.AlleOrd),
 };
-
-// const femTilfeldigeOrd: Ordklasse[] = Array(5).fill(Ordklasse.AlleOrd);
 
 const passordOutput = document.querySelector('#passord');
 const nyttPassordKnapp = document.querySelector('#nytt-passord');
@@ -59,7 +59,14 @@ kopierPassordKnapp.addEventListener('click', (e) => {
     }
 });
 
-velgVariantSelect.addEventListener('change', (e) => {
-    valgtVariant = e.target.value;
-    brukVariant(valgtVariant);
+velgVariantSelect.addEventListener('change', (event) => {
+    const alleVarianter = Object.values(Variant);
+    const nyVariant = event.target.value;
+
+    if (alleVarianter.includes(nyVariant)) {
+        valgtVariant = nyVariant;
+        brukVariant(valgtVariant);
+    } else {
+        console.error(`Kunne ikke velge variant "${nyVariant}"`);
+    }
 });

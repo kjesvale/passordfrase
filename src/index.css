@@ -1,5 +1,5 @@
 body {
-    margin: 0;
+    margin: 0 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,7 +23,11 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    margin-top: 0;
 }
 
 a {
@@ -65,10 +69,6 @@ footer p {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
-}
-
-#innstillinger {
-    margin-bottom: 4rem;
 }
 
 .knapp {
@@ -144,11 +144,8 @@ footer p {
 }
 
 @media (min-width: 50rem) {
-    main, footer {
-        margin: 0 2rem;
-    }
-
     body {
+        margin: 0 2rem;
         font-size: 1.25rem;
     }
 
