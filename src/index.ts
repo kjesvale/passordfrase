@@ -1,4 +1,6 @@
-import opprettPassord from './algoritme/opprett-passord';
+import opprettPassord, {
+    antallMuligeKombinasjoner,
+} from './algoritme/opprett-passord';
 import { Separator } from './algoritme/typer';
 import varianter, { Variant } from './algoritme/varianter';
 
@@ -12,7 +14,19 @@ let valgtVariant = Variant.Standard;
 let valgtSeparator = Separator.Mellomrom;
 
 const opprettNyPassordfrase = () => {
-    passordOutput.textContent = opprettPassord(varianter[valgtVariant], valgtSeparator);
+    passordOutput.textContent = opprettPassord(
+        varianter[valgtVariant],
+        valgtSeparator
+    );
+};
+
+const oppdaterPassordfraseMedNySeparator = (
+    gammelSeparator: Separator,
+    nySeparator: Separator
+) => {
+    passordOutput.textContent = passordOutput.textContent
+        .split(gammelSeparator)
+        .join(nySeparator);
 };
 
 const initialiser = () => {
@@ -30,11 +44,17 @@ const initialiser = () => {
 
     velgVariantSelect.addEventListener('change', (event) => {
         const alleVarianter = Object.values(Variant);
-        const nyVariant = event.target.value;
+        const nyVariant = (<HTMLSelectElement>event.target).value as Variant;
 
         if (alleVarianter.includes(nyVariant)) {
             valgtVariant = nyVariant;
             opprettNyPassordfrase();
+
+            console.log(
+                `Valgte variant '${valgtVariant}', antall mulige kombinasjoner: ${antallMuligeKombinasjoner(
+                    varianter[valgtVariant]
+                )}`
+            );
         } else {
             console.error(`Kunne ikke velge variant "${nyVariant}"`);
         }
@@ -42,11 +62,12 @@ const initialiser = () => {
 
     velgSeparatorSelect.addEventListener('change', (event) => {
         const alleSeparatorer = Object.values(Separator);
-        const nySeparator = event.target.value;
+        const nySeparator = (<HTMLSelectElement>event.target)
+            .value as Separator;
 
         if (alleSeparatorer.includes(nySeparator)) {
+            oppdaterPassordfraseMedNySeparator(valgtSeparator, nySeparator);
             valgtSeparator = nySeparator;
-            opprettNyPassordfrase();
         } else {
             console.error(`Kunne ikke velge separator "${nySeparator}"`);
         }

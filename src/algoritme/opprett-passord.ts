@@ -29,34 +29,19 @@ const velgTilfeldigOrd = (ordsett: Ordsett) => {
     return ordsett[index];
 };
 
-const erstattMellomromMedSeparator = (ord: string, separator: Separator) =>
-    ord.replace(/ /g, separator);
-
 export const antallMuligeKombinasjoner = (setning: Ordklasse[]) =>
     setning.reduce(
-        (numberOfCombinations, ordklasse) => numberOfCombinations * alleOrdsett[ordklasse].length,
+        (numberOfCombinations, ordklasse) =>
+            numberOfCombinations * alleOrdsett[ordklasse].length,
         1
     );
 
 const opprettPassord = (
     setning: Ordklasse[],
     separator: Separator = Separator.Mellomrom
-): string => {
-    let passordfrase = '';
-
-    setning.forEach((ordklasse, index) => {
-        if (index > 0) {
-            passordfrase += separator;
-        }
-
-        const muligeOrd = alleOrdsett[ordklasse];
-        const tilfeldigOrd = velgTilfeldigOrd(muligeOrd);
-        const medSeparator = erstattMellomromMedSeparator(tilfeldigOrd, separator);
-
-        return (passordfrase += medSeparator);
-    });
-
-    return passordfrase;
-};
+): string =>
+    setning
+        .map((ordklasse) => velgTilfeldigOrd(alleOrdsett[ordklasse]))
+        .join(separator);
 
 export default opprettPassord;

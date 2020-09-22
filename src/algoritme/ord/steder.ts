@@ -19,7 +19,14 @@ const stederINorge: Sted[] = [
 const stederIUtlandet: Sted[] = ['tokyo', 'paris', 'kyoto', 'madrid'];
 const fiktiveSteder: Sted[] = ['galtvort'];
 const stederIOslo: Sted[] = ['storo', 'grefsen', 'majorstuen'];
-const stederIVerdensrommet: Sted[] = ['jupiter', 'månen', 'mars', 'pluto', 'saturn', 'sola'];
+const stederIVerdensrommet: Sted[] = [
+    'jupiter',
+    'månen',
+    'mars',
+    'pluto',
+    'saturn',
+    'sola',
+];
 
 const naturen: BøybartSted[] = [
     ['åker', 'åkeren', 'åkerne'],
@@ -97,7 +104,9 @@ export const stederUbestemt: string[] = [
     ...stederBøybare.map(([ubestemt]) => ubestemt),
 ];
 
-export const stederBestemt: string[] = stederBøybare.map(([ubestemt, bestemt]) => bestemt);
+export const stederBestemt: string[] = stederBøybare.map(
+    ([ubestemt, bestemt]) => bestemt
+);
 export const stederBestemtFlertall: string[] = stederBøybare
     .map(([ubestemt, bestemt, bestemtFlertall]) => bestemtFlertall)
     .filter(fjernUndefined);

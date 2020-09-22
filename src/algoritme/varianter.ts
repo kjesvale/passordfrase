@@ -1,4 +1,4 @@
-import { Ordklasse } from "./typer";
+import { Ordklasse } from './typer';
 
 export enum Variant {
     Standard = 'standard',

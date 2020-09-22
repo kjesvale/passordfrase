@@ -109,7 +109,11 @@ const ting = [
 
 const subjekter = [...dyr, ...mennesker, ...fabeldyr, ...ting];
 
-export const subjekterUbestemt: string[] = subjekter.map(([ubestemt]) => ubestemt);
-export const subjekterBestemt: string[] = subjekter.map(([_, bestemt]) => bestemt);
+export const subjekterUbestemt: string[] = subjekter.map(
+    ([ubestemt]) => ubestemt
+);
+export const subjekterBestemt: string[] = subjekter.map(
+    ([_, bestemt]) => bestemt
+);
 
 export default subjekter;
