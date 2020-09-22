@@ -2,11 +2,11 @@ import opprettPassord from './algoritme/opprett-passord';
 import { Separator } from './algoritme/typer';
 import varianter, { Variant } from './algoritme/varianter';
 
-const passordOutput = document.querySelector('#passord');
-const nyttPassordKnapp = document.querySelector('#nytt-passord');
-const kopierPassordKnapp = document.querySelector('#kopier-passord');
-const velgVariantSelect = document.querySelector('#velg-variant');
-const velgSeparatorSelect = document.querySelector('#velg-separator');
+const passordOutput = document.getElementById('passord');
+const nyttPassordKnapp = document.getElementById('nytt-passord');
+const kopierPassordKnapp = document.getElementById('kopier-passord');
+const velgVariantSelect = document.getElementById('velg-variant');
+const velgSeparatorSelect = document.getElementById('velg-separator');
 
 let valgtVariant = Variant.Standard;
 let valgtSeparator = Separator.Mellomrom;
